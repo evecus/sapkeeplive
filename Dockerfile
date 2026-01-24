@@ -24,7 +24,7 @@ COPY keep_sap.sh /usr/local/bin/keep_sap.sh
 RUN chmod +x /usr/local/bin/keep_sap.sh
 
 # 关键：设置 Cron 任务并引用环境变量文件
-RUN echo "*/2 8-9 * * * . /etc/environment; /bin/bash /usr/local/bin/keep_sap.sh >> /var/log/cron.log 2>&1" > /etc/cron.d/sap-cron && \
+RUN echo "30 8 * * * . /etc/environment; /bin/bash /usr/local/bin/keep_sap.sh >> /var/log/cron.log 2>&1" > /etc/cron.d/sap-cron && \
     chmod 0644 /etc/cron.d/sap-cron
 
 # 启动脚本：导出环境变量 -> 启动 Cron -> 持续查看日志
