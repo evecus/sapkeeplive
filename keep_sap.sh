@@ -5,7 +5,7 @@ EMAIL="${EMAIL}"
 PASSWORD="${PASSWORD}"
 
 if [ -z "$EMAIL" ] || [ -z "$PASSWORD" ]; then
-    echo "$(date): 错误 - 未设置 CF_EMAIL 或 CF_PASSWORD 环境变量"
+    echo "$(date): 错误 - 未设置 EMAIL 或 PASSWORD 环境变量"
     exit 1
 fi
 
